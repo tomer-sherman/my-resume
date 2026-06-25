@@ -1,0 +1,50 @@
+/* src/main.css */
+
+.Main section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* Indent the text to make room for the timeline */
+    padding: 10px 0 10px 30px;
+    /* The subtle un-focused timeline line */
+    border-left: 2px solid rgba(37, 99, 235, 0.2);
+    transition: all 0.3s ease;
+    border-radius: 0 8px 8px 0;
+}
+
+/* The Timeline Node (The Circle) */
+.Main section::before {
+    content: '';
+    position: absolute;
+    left: -7px;
+    /* Centers the dot on the line */
+    top: 15px;
+    width: 12px;
+    height: 12px;
+    background: var(--bg-white);
+    border: 2px solid rgba(37, 99, 235, 0.5);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* The Hover Effect: Lights up the timeline and highlights the background */
+.Main section:hover {
+    border-left-color: var(--accent-blue);
+    background: linear-gradient(90deg, rgba(37, 99, 235, 0.04) 0%, transparent 100%);
+}
+
+.Main section:hover::before {
+    background: var(--accent-blue);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 12px rgba(37, 99, 235, 0.6);
+}
+
+.Main h1 {
+    font-family: var(--font-hud);
+    font-size: 2rem;
+    color: #000000;
+    /* Changed to white so it pops on the dark fade */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+}

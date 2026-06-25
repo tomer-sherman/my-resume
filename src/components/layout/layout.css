@@ -1,0 +1,59 @@
+/* src/layout.css */
+
+/* src/layout.css */
+
+.Layout {
+    /* THE FIX: Removed max-width and margin. 
+       Now it takes up 100% of the screen width! */
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-areas:
+        "head head"
+        "main side";
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+.Layout>header {
+    grid-area: head;
+    /* No borders, just a distinct background block */
+}
+
+.Layout>main {
+    grid-area: main;
+    padding: 4rem;
+    border-right: 2px solid rgba(110, 79, 79, 0.1);
+    /* Softened the border so it blends better */
+
+    /* THE WATERFALL GRADIENT: Starts pure navy, fades to white at 40% */
+    background: white;
+}
+.Layout>aside {
+    grid-area: side;
+    padding: 4rem;
+
+    /* THE WATERFALL GRADIENT */
+    background: white;
+}
+
+/* Responsive collapse for smaller screens */
+@media (max-width: 1024px) {
+    .Layout {
+        grid-template-areas: "head" "main" "side";
+        grid-template-columns: 1fr;
+    }
+
+    .Layout>main {
+        border-right: none;
+        /* Remove vertical line on mobile */
+        border-bottom: 2px solid var(--navy-primary);
+        /* Move to horizontal */
+        padding: 2rem;
+    }
+
+    .Layout>aside {
+        padding: 2rem;
+    }
+}
