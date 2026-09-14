@@ -82,3 +82,48 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-blue);
 }
+
+/* --- SHARED SECTION HEADINGS (main + aside) --- */
+.Section-title {
+    position: relative;
+    font-family: var(--font-hud);
+    color: var(--navy-primary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    padding-bottom: 10px;
+}
+
+/* Short accent underline bar */
+.Section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 48px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--accent-blue);
+}
+
+/* --- MOTION --- */
+@keyframes rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

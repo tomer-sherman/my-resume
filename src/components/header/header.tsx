@@ -1,33 +1,58 @@
-import "./header.css";
-import me from '../../assets/pictures/pic.jpeg';
+import './header.css';
+import { resume } from '../../data/resume.data';
+
+const BASE_URL = import.meta.env.BASE_URL;
+const { basics, socials, contact } = resume;
 
 export function Header() {
     return (
-        <header className="Header">
-          
-            <div className="Header-overlay"></div>
+        <div className="Header">
+            <div className="Header-overlay" aria-hidden="true"></div>
 
-            {/* Layer 2: The Identity Cluster (Left Side) */}
             <div className="Header-content-cluster">
                 <img
-                    src={me}
-                    alt="Tomer Sherman"
+                    src={`${BASE_URL}${basics.image}`}
+                    alt={basics.name}
                     className="Header-avatar"
+                    width={180}
+                    height={180}
                 />
 
                 <div className="Header-name-cluster">
-                    <h1>TOMER SHERMAN</h1>
-                    <h2>SOFTWARE FULLSTACK PROGRAMER</h2>
-                    <p>
-                        Programmer with a strong passion for coding.<br />
-                        Architecting high-performance React frontend and software solutions.
-                    </p>
+                    <h1>{basics.name}</h1>
+                    <p className="Header-role">{basics.title}</p>
+                    <p className="Header-tagline">{basics.tagline}</p>
+                    <p className="Header-intro">{basics.intro}</p>
 
-                    <div className="Header-socials-cluster">
-                        <a href="https://github.com/tomer-sherman" target="blank" className="Header-social-link">GitHub</a>
-                    </div>
+                    <address className="Header-contact" aria-label={contact.title}>
+                        <ul>
+                            {contact.lines.map((line) => (
+                                <li key={line.text}>
+                                    <span className="Header-contact-icon" aria-hidden="true">{line.icon}</span>
+                                    {line.text}
+                                </li>
+                            ))}
+                        </ul>
+                    </address>
+
+                    <nav className="Header-socials-cluster" aria-label="Profiles">
+                        <ul className="Header-links">
+                            {socials.map((link) => (
+                                <li key={link.label}>
+                                    <a
+                                        href={link.href}
+                                        className="Header-social-link"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {link.label}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
                 </div>
             </div>
-        </header>
+        </div>
     );
 }

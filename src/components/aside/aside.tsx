@@ -1,32 +1,33 @@
-import "./aside.css";
+import './aside.css';
+import { resume } from '../../data/resume.data';
+
+const { skills, principles } = resume;
 
 export function Aside() {
     return (
         <div className="Aside">
-            <h1>FRONTEND TOOLSET</h1>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript </li>
-                <li>TypeScript</li>
-                <li>React Framework</li>
-            </ul>
-
-            <h2>GENERAL TRAITS</h2>
-            <ul>
-                <li>Object-Oriented Programming</li>
-                <li>System Architecture</li>
-                <li>UI/UX Precision</li>
-                <li>Problem Solving</li>
-                
-            </ul>
-
-            <h2>CONTACT DATA</h2>
-            <div style={{ marginTop: '10px' }}>
-                <p>📍 Israel - Rehovot</p>
-                <p>📞 +972 52-691-0602</p>
-                <p>✉️ tomer.sherman11@gmail.com</p>
+            <div className="Aside-stack">
+                {skills.map((group) => (
+                    <section key={group.id} className="Aside-section" aria-labelledby={`${group.id}-title`}>
+                        <h2 id={`${group.id}-title`} className="Section-title">{group.title}</h2>
+                        <ul className="Chips">
+                            {group.items.map((item) => (
+                                <li key={item} className="Chip">{item}</li>
+                            ))}
+                        </ul>
+                        {group.note && <p className="Aside-note">{group.note}</p>}
+                    </section>
+                ))}
             </div>
+
+            <section className="Aside-section" aria-labelledby={`${principles.id}-title`}>
+                <h2 id={`${principles.id}-title`} className="Section-title">{principles.title}</h2>
+                <ul className="Aside-list">
+                    {principles.items.map((item) => (
+                        <li key={item}>{item}</li>
+                    ))}
+                </ul>
+            </section>
         </div>
-    )
+    );
 }

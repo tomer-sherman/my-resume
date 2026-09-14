@@ -1,0 +1,195 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Tomer Sherman",
+    "label": "Full Stack Developer",
+    "headline": "React, TypeScript, Node.js, MySQL, MongoDB | RAG · MCP servers · AI agents | Architecture-first thinking",
+    "image": "https://tomer-sherman.github.io/my-resume/pic.jpeg",
+    "email": "tomer.sherman11@gmail.com",
+    "phone": "+972 52-691-0602",
+    "url": "https://tomer-sherman.github.io/my-resume/",
+    "summary": "Full-stack developer who builds from the architecture down. I map the data flow first, then build in layers — client, API, DB — and wire AI into systems as tools and agents.",
+    "location": {
+      "city": "Rehovot",
+      "countryCode": "IL"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "tomer-sherman",
+        "url": "https://github.com/tomer-sherman"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "tomer-sherman-a90181429",
+        "url": "https://www.linkedin.com/in/tomer-sherman-a90181429/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Israel Defense Forces",
+      "position": "IDF Officer",
+      "startDate": "2023-02",
+      "endDate": "2025-02",
+      "highlights": [
+        "Field Intelligence Combat Officer: Led a platoon of combat soldiers under extreme pressure, keeping composure and making clear decisions under stress. Maintained situational awareness to make critical calls on the fly, and planned before executing. Gathered intelligence and produced accurate, data-driven operational reports.",
+        "Operations Officer: Ran the operations room, keeping communication clear and efficient across multiple channels. Filed accurate reports, maintained strong interpersonal communication, and took full accountability for task management and high-quality execution."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "John Bryce Academy",
+      "area": "Full Stack & AI Development",
+      "studyType": "Full Stack & AI Development Track",
+      "startDate": "2026-03",
+      "summary": "Intensive full-stack program integrated with AI. Driven by a curiosity to understand the underlying architecture of software rather than memorizing syntax.",
+      "courses": [
+        "React, TypeScript, Node.js/Express, MySQL, MongoDB, Socket.IO, Docker",
+        "AI engineering: RAG pipelines, MCP servers, building AI agents, OpenAI API integration",
+        "Emphasis on clean architecture, layered backends, and state management"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": [
+        "React",
+        "TypeScript",
+        "Redux",
+        "react-hook-form",
+        "Vite"
+      ]
+    },
+    {
+      "name": "Backend",
+      "keywords": [
+        "Node.js",
+        "Express",
+        "REST APIs",
+        "Socket.IO",
+        "Zod validation",
+        "JWT / Firebase Auth"
+      ]
+    },
+    {
+      "name": "Databases",
+      "keywords": [
+        "MySQL",
+        "MongoDB (Mongoose)"
+      ]
+    },
+    {
+      "name": "AI & Agents",
+      "keywords": [
+        "RAG",
+        "MCP servers",
+        "AI agents",
+        "OpenAI API",
+        "prompt engineering"
+      ]
+    },
+    {
+      "name": "DevOps & Tools",
+      "keywords": [
+        "Docker",
+        "Git/GitHub",
+        "GitHub Pages",
+        "Firebase",
+        "ngrok",
+        "Postman"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "CryptoTracker",
+      "description": "Live crypto price tracker with optimized fetching: 2 calls at boot, 1 poll/min, zero calls on user interaction (all reads from global state)",
+      "highlights": [
+        "MCP server exposing crypto data as tools to an AI, powering an in-app chatbot"
+      ],
+      "keywords": [
+        "React",
+        "Redux",
+        "TypeScript",
+        "CoinGecko API",
+        "MCP"
+      ],
+      "url": "https://sherman-crypto-tracker.firebaseapp.com/home",
+      "links": [
+        {
+          "label": "Live",
+          "url": "https://sherman-crypto-tracker.firebaseapp.com/home"
+        },
+        {
+          "label": "Code",
+          "url": "https://github.com/tomer-sherman/Crypto-Tracker"
+        }
+      ]
+    },
+    {
+      "name": "simple-url-scraper",
+      "type": "npm package",
+      "description": "Published npm library: give it a URL, get back metadata, headers and links — built as a tool for AI agents",
+      "highlights": [],
+      "keywords": [
+        "Node",
+        "TypeScript"
+      ],
+      "url": "https://www.npmjs.com/package/simple-url-scraper",
+      "links": [
+        {
+          "label": "npm",
+          "url": "https://www.npmjs.com/package/simple-url-scraper"
+        }
+      ]
+    },
+    {
+      "name": "Holidayer",
+      "description": "Role-based auth (user/admin) with chained middlewares, admin-gated CRUD",
+      "highlights": [
+        "MCP server (express-mcp-handler) exposing DB queries as tools; AI recommendation layer returning structured JSON per destination"
+      ],
+      "keywords": [
+        "Node",
+        "Express 5",
+        "TypeScript",
+        "MongoDB (Mongoose)",
+        "MCP",
+        "OpenAI"
+      ],
+      "url": "https://github.com/tomer-sherman/holidayer",
+      "links": [
+        {
+          "label": "Code",
+          "url": "https://github.com/tomer-sherman/holidayer"
+        }
+      ]
+    },
+    {
+      "name": "freelance-price-proposal",
+      "type": "Claude skill",
+      "description": "A Claude skill that turns a freelancer's raw project notes into a finished, client-ready price proposal, plus a private list of details they forgot to specify",
+      "highlights": [
+        "Works in any language and profession; built from real proposals gathered from working freelancers"
+      ],
+      "keywords": [
+        "Markdown skill",
+        "prompt engineering"
+      ],
+      "url": "https://github.com/tomer-sherman/freelance-price-proposal",
+      "links": [
+        {
+          "label": "Code",
+          "url": "https://github.com/tomer-sherman/freelance-price-proposal"
+        }
+      ]
+    }
+  ],
+  "languages": [],
+  "meta": {
+    "canonical": "https://tomer-sherman.github.io/my-resume/resume.json"
+  }
+}

@@ -1,50 +1,275 @@
 /* src/main.css */
 
-.Main section {
+.Main {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.Main .Section-title {
+    font-size: 2rem;
+}
+
+/* ---------- Timeline (Experience / Life Experience) ---------- */
+.Timeline {
+    list-style: none;
+    margin: 0 0 0 6px;
+    padding: 0;
     position: relative;
     display: flex;
     flex-direction: column;
-    /* Indent the text to make room for the timeline */
-    padding: 10px 0 10px 30px;
-    /* The subtle un-focused timeline line */
+    gap: 1.75rem;
+    /* The thin vertical accent line */
     border-left: 2px solid rgba(37, 99, 235, 0.2);
-    transition: all 0.3s ease;
-    border-radius: 0 8px 8px 0;
 }
 
-/* The Timeline Node (The Circle) */
-.Main section::before {
+.Timeline-entry {
+    position: relative;
+    padding: 4px 16px 8px 28px;
+    border-radius: 0 8px 8px 0;
+    transition: background 0.3s ease;
+}
+
+/* The Timeline Node (one dot per entry) */
+.Timeline-entry::before {
     content: '';
     position: absolute;
-    left: -7px;
-    /* Centers the dot on the line */
-    top: 15px;
+    left: -8px;
+    top: 10px;
     width: 12px;
     height: 12px;
+    box-sizing: border-box;
     background: var(--bg-white);
     border: 2px solid rgba(37, 99, 235, 0.5);
     border-radius: 50%;
     transition: all 0.3s ease;
 }
 
-/* The Hover Effect: Lights up the timeline and highlights the background */
-.Main section:hover {
-    border-left-color: var(--accent-blue);
+/* Hover: lights up the node and tints the entry */
+.Timeline-entry:hover {
     background: linear-gradient(90deg, rgba(37, 99, 235, 0.04) 0%, transparent 100%);
 }
 
-.Main section:hover::before {
+.Timeline-entry:hover::before {
     background: var(--accent-blue);
     border-color: var(--accent-blue);
     box-shadow: 0 0 12px rgba(37, 99, 235, 0.6);
 }
 
-.Main h1 {
-    font-family: var(--font-hud);
-    font-size: 2rem;
-    color: #000000;
-    /* Changed to white so it pops on the dark fade */
-    letter-spacing: 2px;
+.Timeline-period {
+    margin: 0 0 8px 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    margin: 0 0 20px 0;
+    color: var(--accent-blue);
+}
+
+.Timeline-title {
+    margin: 0;
+    font-family: var(--font-hud);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: var(--navy-primary);
+}
+
+.Timeline-org {
+    display: block;
+    margin: 6px 0 0 0;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+a.Timeline-org:hover {
+    color: var(--accent-blue);
+}
+
+.Timeline-summary {
+    margin: 14px 0 0 0;
+    line-height: 1.7;
+    max-width: 70ch;
+}
+
+.Timeline-bullets {
+    margin: 12px 0 0 0;
+    padding-left: 1.25rem;
+    line-height: 1.7;
+}
+
+.Timeline-bullets li::marker,
+.Project-bullets li::marker {
+    color: var(--accent-blue);
+}
+
+.Timeline-role {
+    margin-top: 16px;
+}
+
+.Timeline-role-title {
+    margin: 0 0 4px 0;
+    font-family: var(--font-terminal);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--navy-primary);
+}
+
+.Timeline-role p {
+    margin: 0;
+    line-height: 1.7;
+    max-width: 70ch;
+}
+
+/* ---------- Projects (card grid) ---------- */
+.Projects {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.Project {
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #ffffff;
+    border: 1px solid rgba(37, 99, 235, 0.15);
+    border-radius: 10px;
+    padding: 20px 22px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover lift + accent border */
+.Project:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 12px 24px rgba(10, 25, 47, 0.12);
+}
+
+.Project-title {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-hud);
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    color: var(--navy-primary);
+    overflow-wrap: anywhere;
+}
+
+.Project-kind {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-terminal);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    border-radius: 999px;
+    padding: 2px 8px 2px 6px;
+}
+
+/* Logo inside the kind badge (npm / Claude) */
+.Project-kind-icon {
+    display: block;
+    width: 14px;
+    height: 14px;
+}
+
+.Project-stack {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.Project-bullets {
+    flex: 1;
+    margin: 0;
+    padding-left: 1.1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.Project-bullets li + li {
+    margin-top: 6px;
+}
+
+.Project-links {
+    margin: 6px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.Project-link {
+    color: var(--accent-blue);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.Project-link::after {
+    content: ' ↗';
+    content: ' ↗' / '';
+}
+
+.Project-link:hover,
+.Project-link:focus-visible {
+    border-bottom-color: var(--accent-blue);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .Main {
+        gap: 2.75rem;
+    }
+
+    .Main .Section-title {
+        font-size: 1.6rem;
+    }
+
+    .Projects {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .Main .Section-title {
+        font-size: 1.35rem;
+        letter-spacing: 1.5px;
+    }
+
+    .Timeline-entry {
+        padding-right: 0;
+        padding-left: 22px;
+    }
+
+    .Project {
+        padding: 16px;
+    }
+}
+
+/* ---------- Fade-in on load (keyframes live in index.css) ---------- */
+.Main-section {
+    animation: rise-in 0.6s ease-out both;
+}
+
+.Main-section:nth-child(2) {
+    animation-delay: 0.12s;
+}
+
+.Main-section:nth-child(n+3) {
+    animation-delay: 0.24s;
 }

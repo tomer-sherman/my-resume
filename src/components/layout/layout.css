@@ -1,10 +1,6 @@
 /* src/layout.css */
 
-/* src/layout.css */
-
 .Layout {
-    /* THE FIX: Removed max-width and margin. 
-       Now it takes up 100% of the screen width! */
     width: 100%;
     min-height: 100vh;
 
@@ -13,28 +9,24 @@
         "head head"
         "main side";
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto 1fr;
 }
 
 .Layout>header {
     grid-area: head;
-    /* No borders, just a distinct background block */
 }
 
 .Layout>main {
     grid-area: main;
     padding: 4rem;
-    border-right: 2px solid rgba(110, 79, 79, 0.1);
-    /* Softened the border so it blends better */
-
-    /* THE WATERFALL GRADIENT: Starts pure navy, fades to white at 40% */
+    /* Soft vertical divider between the two columns */
+    border-right: 2px solid rgba(10, 25, 47, 0.08);
     background: white;
 }
+
 .Layout>aside {
     grid-area: side;
     padding: 4rem;
-
-    /* THE WATERFALL GRADIENT */
     background: white;
 }
 
@@ -43,17 +35,31 @@
     .Layout {
         grid-template-areas: "head" "main" "side";
         grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
     }
 
     .Layout>main {
         border-right: none;
-        /* Remove vertical line on mobile */
+        /* Move the divider to horizontal */
         border-bottom: 2px solid var(--navy-primary);
-        /* Move to horizontal */
         padding: 2rem;
     }
 
     .Layout>aside {
         padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .Layout>main,
+    .Layout>aside {
+        padding: 1.75rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .Layout>main,
+    .Layout>aside {
+        padding: 1.5rem 1.25rem;
     }
 }

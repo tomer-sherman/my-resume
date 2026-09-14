@@ -4,6 +4,7 @@
     position: relative;
     width: 100%;
     min-height: 300px;
+    box-sizing: border-box;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -14,13 +15,13 @@
     background-color: var(--navy-dark);
 }
 
-/* THE NEW HIGH-TECH GRADIENT */
+/* THE HIGH-TECH GRADIENT */
 .Header-overlay {
     position: absolute;
     inset: 0;
     z-index: 1;
 
-    /* Layer 1: A royal blue digital spotlight behind your picture/text 
+    /* Layer 1: A royal blue digital spotlight behind the picture/text
        Layer 2: A subtle electric cyan glow on the far top-right
        Layer 3: The sweeping linear navy base gradient
     */
@@ -36,13 +37,14 @@
     display: flex;
     align-items: center;
     gap: 40px;
+    min-width: 0;
 }
 
 .Header-avatar {
     width: 180px;
     height: 180px;
+    flex-shrink: 0;
     object-fit: cover;
-    /* Back to a sharp square/slight round to match the reference image */
     border-radius: 8px;
     border: 3px solid #ffffff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -58,6 +60,7 @@
 .Header-name-cluster {
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
 .Header-name-cluster h1 {
@@ -65,46 +68,181 @@
     font-size: 3.5rem;
     font-weight: 900;
     color: #ffffff;
-    /* White text on navy background */
     letter-spacing: 4px;
     margin: 0;
     text-transform: uppercase;
 }
 
-.Header-name-cluster h2 {
+/* Job title */
+.Header-role {
     font-family: var(--font-terminal);
     font-weight: 700;
     font-size: 1.25rem;
     color: var(--accent-blue);
-    margin: 5px 0 15px 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 5px 0 12px 0;
 }
 
-.Header-name-cluster p {
+/* LinkedIn-style headline */
+.Header-tagline {
+    font-family: var(--font-terminal);
+    font-size: 0.95rem;
+    color: #93c5fd;
+    line-height: 1.6;
+    margin: 0 0 14px 0;
+    max-width: 640px;
+}
+
+.Header-intro {
     font-family: var(--font-terminal);
     color: #cbd5e1;
-    /* Light slate for bio */
     font-size: 1.1rem;
     line-height: 1.6;
     margin: 0;
     max-width: 600px;
 }
 
-.Header-socials-cluster {
-    display: flex;
-    gap: 24px;
-    margin-top: 20px;
+/* Contact line: location · phone · email */
+.Header-contact {
+    margin-top: 18px;
+    font-style: normal;
+    font-family: var(--font-terminal);
+    font-size: 0.95rem;
+    color: #cbd5e1;
 }
 
+.Header-contact ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 22px;
+}
+
+.Header-contact li {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    overflow-wrap: anywhere;
+}
+
+/* Socials row */
+.Header-socials-cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 28px;
+    margin-top: 22px;
+}
+
+.Header-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Pill links with a hover glow */
 .Header-social-link {
+    display: inline-block;
     color: #ffffff;
     text-decoration: none;
     font-family: var(--font-terminal);
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
+    padding: 6px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
     transition: all 0.3s ease;
 }
 
-.Header-social-link:hover {
-    color: var(--accent-blue);
+.Header-social-link:hover,
+.Header-social-link:focus-visible {
+    color: #ffffff;
+    border-color: var(--accent-blue);
+    background: rgba(37, 99, 235, 0.25);
+    box-shadow: 0 0 16px rgba(37, 99, 235, 0.55);
     transform: translateY(-2px);
+    outline: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .Header-name-cluster h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .Header {
+        padding: 2.5rem 2rem;
+        min-height: 0;
+    }
+
+    .Header-content-cluster {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .Header-avatar {
+        width: 140px;
+        height: 140px;
+    }
+
+    .Header-name-cluster h1 {
+        font-size: 2.4rem;
+        letter-spacing: 3px;
+    }
+
+    .Header-role {
+        font-size: 1.1rem;
+    }
+
+    .Header-intro {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .Header {
+        padding: 2rem 1.25rem;
+    }
+
+    .Header-avatar {
+        width: 112px;
+        height: 112px;
+    }
+
+    .Header-name-cluster h1 {
+        font-size: 1.85rem;
+        letter-spacing: 2px;
+        overflow-wrap: anywhere;
+    }
+
+    .Header-tagline {
+        font-size: 0.85rem;
+    }
+
+    .Header-contact {
+        font-size: 0.85rem;
+    }
+
+    .Header-contact ul {
+        gap: 4px 16px;
+    }
+
+    .Header-links {
+        gap: 8px;
+    }
+
+    .Header-social-link {
+        font-size: 0.9rem;
+        padding: 5px 12px;
+    }
 }
