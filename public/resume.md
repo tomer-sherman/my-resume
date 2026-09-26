@@ -33,8 +33,8 @@ Intensive full-stack program integrated with AI. Driven by a curiosity to unders
 
 React · Redux · TypeScript · CoinGecko API · MCP
 
-- Live crypto price tracker with optimized fetching: 2 calls at boot, 1 poll/min, zero calls on user interaction (all reads from global state)
-- MCP server exposing crypto data as tools to an AI, powering an in-app chatbot
+- Live crypto price tracker with a smart caching system: 2 calls at boot, 1 poll/min, zero calls on user interaction
+- Global state management with Redux: every read comes from the store, not the API
 
 Links: [Live](https://sherman-crypto-tracker.firebaseapp.com/home) · [Code](https://github.com/tomer-sherman/Crypto-Tracker)
 
@@ -46,14 +46,14 @@ Node · TypeScript
 
 Links: [npm](https://www.npmjs.com/package/simple-url-scraper)
 
-### Holidayer
+### VacationTracker
 
 Node · Express 5 · TypeScript · MongoDB (Mongoose) · MCP · OpenAI
 
 - Role-based auth (user/admin) with chained middlewares, admin-gated CRUD
 - MCP server (express-mcp-handler) exposing DB queries as tools; AI recommendation layer returning structured JSON per destination
 
-Links: [Code](https://github.com/tomer-sherman/holidayer)
+Links: [Code](https://github.com/tomer-sherman/vacation-tracker)
 
 ### freelance-price-proposal (Claude skill)
 
@@ -81,7 +81,7 @@ Ran the operations room, keeping communication clear and efficient across multip
 ## Skills
 
 - Frontend: React, TypeScript, Redux, react-hook-form, Vite (+ HTML · CSS · JavaScript)
-- Backend: Node.js, Express, REST APIs, Socket.IO, Zod validation, JWT / Firebase Auth
+- Backend: Node.js, Express, REST APIs, Zod validation, JWT / Firebase Auth
 - Databases: MySQL, MongoDB (Mongoose)
 - AI & Agents: RAG, MCP servers, AI agents, OpenAI API, prompt engineering
 - DevOps & Tools: Docker, Git/GitHub, GitHub Pages, Firebase, ngrok, Postman
@@ -93,3 +93,9 @@ Ran the operations room, keeping communication clear and efficient across multip
 - Understanding over memorizing
 - AI-assisted development: scope it, generate it, verify it
 - Composure and decision-making under pressure
+
+## Languages
+
+- Hebrew: Fluent
+- English: High level
+- Russian: Basic

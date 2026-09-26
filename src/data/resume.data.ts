@@ -39,7 +39,7 @@ export const resume: Resume = {
         {
             id: 'backend',
             title: 'Backend',
-            items: ['Node.js', 'Express', 'REST APIs', 'Socket.IO', 'Zod validation', 'JWT / Firebase Auth'],
+            items: ['Node.js', 'Express', 'REST APIs', 'Zod validation', 'JWT / Firebase Auth'],
         },
         {
             id: 'databases',
@@ -110,8 +110,8 @@ export const resume: Resume = {
                 name: 'CryptoTracker',
                 stack: ['React', 'Redux', 'TypeScript', 'CoinGecko API', 'MCP'],
                 bullets: [
-                    'Live crypto price tracker with optimized fetching: 2 calls at boot, 1 poll/min, zero calls on user interaction (all reads from global state)',
-                    'MCP server exposing crypto data as tools to an AI, powering an in-app chatbot',
+                    'Live crypto price tracker with a smart caching system: 2 calls at boot, 1 poll/min, zero calls on user interaction',
+                    'Global state management with Redux: every read comes from the store, not the API',
                 ],
                 links: [
                     { label: 'Live', href: 'https://sherman-crypto-tracker.firebaseapp.com/home' },
@@ -132,15 +132,15 @@ export const resume: Resume = {
                 ],
             },
             {
-                id: 'holidayer',
-                name: 'Holidayer',
+                id: 'vacation-tracker',
+                name: 'VacationTracker',
                 stack: ['Node', 'Express 5', 'TypeScript', 'MongoDB (Mongoose)', 'MCP', 'OpenAI'],
                 bullets: [
                     'Role-based auth (user/admin) with chained middlewares, admin-gated CRUD',
                     'MCP server (express-mcp-handler) exposing DB queries as tools; AI recommendation layer returning structured JSON per destination',
                 ],
                 links: [
-                    { label: 'Code', href: 'https://github.com/tomer-sherman/holidayer' },
+                    { label: 'Code', href: 'https://github.com/tomer-sherman/vacation-tracker' },
                 ],
             },
             {
@@ -184,6 +184,9 @@ export const resume: Resume = {
         ],
     },
 
-    // TODO: languages were not provided. Add entries such as { language: 'Hebrew', fluency: 'Native' } once confirmed.
-    languages: [],
+    languages: [
+        { language: 'Hebrew', fluency: 'Fluent' },
+        { language: 'English', fluency: 'High level' },
+        { language: 'Russian', fluency: 'Basic' },
+    ],
 };

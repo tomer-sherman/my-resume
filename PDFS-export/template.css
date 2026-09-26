@@ -1,0 +1,240 @@
+/* Resume PDF styles. A4, single column, one accent color (the site's navy). @font-face rules are prepended by generate.ts. */
+
+:root {
+    --accent: #1e3a8a;
+    --text: #0f172a;
+    --muted: #475569;
+    --rule: #cbd5e1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Heebo', sans-serif;
+    font-size: 10pt;
+    line-height: 1.4;
+    color: var(--text);
+    background: #ffffff;
+    /* Ligatures ("fi", "fl") come out as one glyph in some PDF text extractors, which hurts ATS keyword matching. */
+    font-variant-ligatures: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+body {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+dl,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12pt;
+    padding-block-end: 7pt;
+    border-block-end: 1.5pt solid var(--accent);
+}
+
+/* Same file as the site avatar (public/pic.jpeg); rounded square like the site, cropped to keep the face centered. */
+.Photo {
+    flex-shrink: 0;
+    width: 25mm;
+    height: 25mm;
+    object-fit: cover;
+    object-position: 50% 30%;
+    border-radius: 4pt;
+}
+
+h1 {
+    font-size: 22pt;
+    line-height: 1.1;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.01em;
+}
+
+.Headline {
+    margin-block-start: 1pt;
+    font-size: 12pt;
+    font-weight: 500;
+}
+
+.Contact {
+    font-size: 9pt;
+}
+
+.Headline + .Contact {
+    margin-block-start: 4pt;
+}
+
+/* A URL must never break across lines; the line may only wrap between items. */
+.Contact .Item {
+    white-space: nowrap;
+}
+
+.Dot {
+    color: var(--muted);
+}
+
+/* Sections */
+
+section {
+    margin-block-start: 12pt;
+}
+
+h2 {
+    margin-block-end: 5pt;
+    padding-block-end: 1.5pt;
+    border-block-end: 0.75pt solid var(--rule);
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    break-after: avoid;
+}
+
+:lang(he) h2 {
+    letter-spacing: 0;
+}
+
+p,
+li {
+    text-wrap: pretty;
+}
+
+/* Skills: label column + dotted item list */
+
+dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 8pt;
+    row-gap: 1.5pt;
+}
+
+.Skill {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+}
+
+dt {
+    grid-area: 1 / 1;
+}
+
+dd {
+    grid-area: 1 / 2;
+}
+
+/*
+ * RTL paint order. Chrome writes no space glyphs, so PDF text extractors (pdf.js, pdf-parse) infer word breaks from
+ * forward gaps only. Painting the right-hand box first and jumping back left glues the text across the jump
+ * (":FrontendHTML/CSS", "CryptoTrackerGitHub"). In Hebrew the left-hand box is painted first instead; the layout
+ * and the DOM (reading/tag) order are unchanged.
+ */
+:lang(he) dd {
+    order: -1;
+}
+
+:lang(he) .Row {
+    direction: ltr;
+}
+
+:lang(he) .Row > * {
+    direction: rtl;
+}
+
+:lang(he) .Row > .Links,
+:lang(he) .Row > .Date {
+    order: -1;
+}
+
+dt {
+    font-weight: 600;
+}
+
+/* Projects, education, military */
+
+article {
+    break-inside: avoid;
+}
+
+article + article {
+    margin-block-start: 7.5pt;
+}
+
+.Row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10pt;
+}
+
+h3 {
+    font-size: 10pt;
+    font-weight: 400;
+}
+
+h3 strong {
+    font-weight: 700;
+}
+
+.Org,
+.Desc {
+    color: var(--text);
+}
+
+.Date,
+.Links {
+    flex-shrink: 0;
+    font-size: 9pt;
+    white-space: nowrap;
+}
+
+.Date {
+    color: var(--muted);
+}
+
+.Links a {
+    color: var(--accent);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-thickness: 0.5pt;
+    text-underline-offset: 1.5pt;
+}
+
+.Stack {
+    font-size: 9pt;
+    color: var(--muted);
+}
+
+ul {
+    padding-inline-start: 13pt;
+}
+
+li {
+    margin-block-start: 1pt;
+}
+
+li::marker {
+    color: var(--accent);
+}

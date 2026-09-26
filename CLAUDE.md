@@ -9,6 +9,8 @@ Tomer Sherman's personal resume site: Vite + React 19 + TypeScript, deployed to 
 (`public/resume.json`, `public/resume.md`, JSON-LD in `index.html`) that Tomer feeds to AI tools while job hunting,
 so the site and those files must never drift.
 
+Resume PDFs (EN + HE, `npm run export:pdf`) live in `PDFS-export/`; read `PDFS-export/CLAUDE.md` before touching them.
+
 ## Commands
 
 ```bash
@@ -78,6 +80,5 @@ Things that only make sense once you see the whole pipeline:
 ## Content rules from the owner
 
 - Never invent resume facts (dates, links, languages, employers). If a detail is missing, leave a `TODO:` comment
-  in `resume.data.ts` and list it in your report. Current open TODO: `languages` is empty.
-- Keep the existing visual identity; enhance, don't redesign.
+  in `resume.data.ts` and list it in your report.- Keep the existing visual identity; enhance, don't redesign.
 - Reports back should be short: what changed, what's left, any TODOs.

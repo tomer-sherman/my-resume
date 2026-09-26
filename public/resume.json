@@ -69,7 +69,6 @@
         "Node.js",
         "Express",
         "REST APIs",
-        "Socket.IO",
         "Zod validation",
         "JWT / Firebase Auth"
       ]
@@ -106,9 +105,9 @@
   "projects": [
     {
       "name": "CryptoTracker",
-      "description": "Live crypto price tracker with optimized fetching: 2 calls at boot, 1 poll/min, zero calls on user interaction (all reads from global state)",
+      "description": "Live crypto price tracker with a smart caching system: 2 calls at boot, 1 poll/min, zero calls on user interaction",
       "highlights": [
-        "MCP server exposing crypto data as tools to an AI, powering an in-app chatbot"
+        "Global state management with Redux: every read comes from the store, not the API"
       ],
       "keywords": [
         "React",
@@ -147,7 +146,7 @@
       ]
     },
     {
-      "name": "Holidayer",
+      "name": "VacationTracker",
       "description": "Role-based auth (user/admin) with chained middlewares, admin-gated CRUD",
       "highlights": [
         "MCP server (express-mcp-handler) exposing DB queries as tools; AI recommendation layer returning structured JSON per destination"
@@ -160,11 +159,11 @@
         "MCP",
         "OpenAI"
       ],
-      "url": "https://github.com/tomer-sherman/holidayer",
+      "url": "https://github.com/tomer-sherman/vacation-tracker",
       "links": [
         {
           "label": "Code",
-          "url": "https://github.com/tomer-sherman/holidayer"
+          "url": "https://github.com/tomer-sherman/vacation-tracker"
         }
       ]
     },
@@ -188,7 +187,20 @@
       ]
     }
   ],
-  "languages": [],
+  "languages": [
+    {
+      "language": "Hebrew",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "English",
+      "fluency": "High level"
+    },
+    {
+      "language": "Russian",
+      "fluency": "Basic"
+    }
+  ],
   "meta": {
     "canonical": "https://tomer-sherman.github.io/my-resume/resume.json"
   }
