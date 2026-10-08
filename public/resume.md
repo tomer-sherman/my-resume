@@ -64,6 +64,15 @@ Markdown skill · prompt engineering
 
 Links: [Code](https://github.com/tomer-sherman/freelance-price-proposal)
 
+### Bax (Chrome extension)
+
+Plasmo · TypeScript · Cheerio · LangChain · OpenAI
+
+- Browser AI eXtension: reads the page you're on and answers questions about it. A Cheerio scraper strips scripts, nav, ads and cookie banners, then turns the page into numbered markdown lines
+- Hand-written agent loop (not LangChain's createAgent) with two tools, skim_page and read_lines: the model skims the page like a table of contents, then reads only the lines it needs; capped at 8 steps
+
+Links: [Code](https://github.com/tomer-sherman/bax)
+
 ## Life Experience
 
 ### IDF Officer — Israel Defense Forces
@@ -83,7 +92,7 @@ Ran the operations room, keeping communication clear and efficient across multip
 - Frontend: React, TypeScript, Redux, react-hook-form, Vite (+ HTML · CSS · JavaScript)
 - Backend: Node.js, Express, REST APIs, Zod validation, JWT / Firebase Auth
 - Databases: MySQL, MongoDB (Mongoose)
-- AI & Agents: RAG, MCP servers, AI agents, OpenAI API, prompt engineering
+- AI & Agents: RAG, MCP servers, AI agents, OpenAI API, n8n, prompt engineering
 - DevOps & Tools: Docker, Git/GitHub, GitHub Pages, Firebase, ngrok, Postman
 
 ## How I Work

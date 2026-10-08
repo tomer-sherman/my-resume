@@ -49,7 +49,7 @@ export const resume: Resume = {
         {
             id: 'ai-agents',
             title: 'AI & Agents',
-            items: ['RAG', 'MCP servers', 'AI agents', 'OpenAI API', 'prompt engineering'],
+            items: ['RAG', 'MCP servers', 'AI agents', 'OpenAI API', 'n8n', 'prompt engineering'],
         },
         {
             id: 'devops-tools',
@@ -155,6 +155,20 @@ export const resume: Resume = {
                 ],
                 links: [
                     { label: 'Code', href: 'https://github.com/tomer-sherman/freelance-price-proposal' },
+                ],
+            },
+            {
+                id: 'bax',
+                name: 'Bax',
+                kind: 'Chrome extension',
+                icon: 'icons/chrome.svg', // logo from simpleicons.org (CC0)
+                stack: ['Plasmo', 'TypeScript', 'Cheerio', 'LangChain', 'OpenAI'],
+                bullets: [
+                    "Browser AI eXtension: reads the page you're on and answers questions about it. A Cheerio scraper strips scripts, nav, ads and cookie banners, then turns the page into numbered markdown lines",
+                    "Hand-written agent loop (not LangChain's createAgent) with two tools, skim_page and read_lines: the model skims the page like a table of contents, then reads only the lines it needs; capped at 8 steps",
+                ],
+                links: [
+                    { label: 'Code', href: 'https://github.com/tomer-sherman/bax' },
                 ],
             },
         ],

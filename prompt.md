@@ -68,10 +68,10 @@ Each card: title, one-line stack, 2–3 bullets, links row. Same card style as t
    - Published npm library: give it a URL, get back metadata, headers and links — built as a tool for AI agents
    - Links: npm → https://www.npmjs.com/package/simple-url-scraper
 
-3. **Holidayer** — Node · Express 5 · TypeScript · MongoDB (Mongoose) · MCP · OpenAI
+3. **VacationTracker** — Node · Express 5 · TypeScript · MongoDB (Mongoose) · MCP · OpenAI
    - Role-based auth (user/admin) with chained middlewares, admin-gated CRUD
    - MCP server (express-mcp-handler) exposing DB queries as tools; AI recommendation layer returning structured JSON per destination
-   - Links: Code → https://github.com/tomer-sherman/holidayer
+   - Links: Code → https://github.com/tomer-sherman/vacation-tracker
 
 4. **freelance-price-proposal** (Claude skill) — Markdown skill · prompt engineering
    - A Claude skill that turns a freelancer's raw project notes into a finished, client-ready price proposal, plus a private list of details they forgot to specify

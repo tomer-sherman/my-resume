@@ -24,13 +24,13 @@ export const en: PdfCopy = {
     },
 
     summary:
-        'Full-stack developer (React, TypeScript, Node.js, MySQL, MongoDB) who builds from the architecture down: maps the data flow first, then builds in layers – client, API, DB – and wires AI into systems as tools and agents. Focus areas: RAG, MCP servers, AI agents.',
+        'Full-stack developer (React, TypeScript, Node.js, MySQL, MongoDB) who builds from the architecture down: maps the data flow first, then builds in layers – client, API, DB – and wires AI in through RAG, MCP servers and agents.',
 
     skills: [
         { label: 'Frontend', items: ['React', 'TypeScript', 'JavaScript', 'Redux', 'React Hook Form', 'Vite', 'HTML/CSS'] },
         { label: 'Backend', items: ['Node.js', 'Express', 'REST APIs', 'Zod', 'JWT', 'Firebase Auth'] },
         { label: 'Databases', items: ['MySQL', 'MongoDB', 'Mongoose'] },
-        { label: 'AI & Tooling', items: ['RAG', 'MCP servers', 'AI agents', 'OpenAI API', 'Prompt engineering'] },
+        { label: 'AI & Tooling', items: ['RAG', 'MCP servers', 'AI agents', 'OpenAI API', 'n8n', 'Prompt engineering'] },
         { label: 'DevOps & Tools', items: ['Docker', 'Git', 'GitHub', 'GitHub Pages', 'Firebase', 'ngrok', 'Postman'] },
     ],
 
@@ -51,8 +51,7 @@ export const en: PdfCopy = {
             id: 'simple-url-scraper',
             description: 'URL scraper library, published as an npm package',
             bullets: [
-                'Built a simple interface: give it a URL, get back its metadata, headers and links',
-                'Designed it as a tool for AI agents to call',
+                'Built a simple interface for AI agents to call: give it a URL, get back its metadata, headers and links',
             ],
         },
         {
@@ -69,6 +68,14 @@ export const en: PdfCopy = {
             bullets: [
                 'Designed it to output a client-ready proposal plus a private list of details the freelancer forgot',
                 'Built it from real proposals gathered from working freelancers; works in any language and profession',
+            ],
+        },
+        {
+            id: 'bax',
+            description: "Chrome extension that reads the page you're on and answers questions about it",
+            bullets: [
+                'Built a Cheerio scraper that strips scripts, nav, ads and cookie banners and turns the page into numbered lines',
+                "Wrote the agent loop by hand (not LangChain's createAgent) with two tools: skim_page and read_lines",
             ],
         },
     ],

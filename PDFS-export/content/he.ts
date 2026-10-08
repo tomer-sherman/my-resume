@@ -24,13 +24,13 @@ export const he: PdfCopy = {
     },
 
     summary:
-        'מפתח Full Stack שמתחיל מהארכיטקטורה: ממפה קודם את זרימת הנתונים, ואז בונה בשכבות – צד לקוח, API ומסד נתונים – ומשלב AI במערכות ככלים וכסוכנים. עובד עם React, TypeScript, Node.js, MySQL ו-MongoDB. תחומי מיקוד: RAG, שרתי MCP וסוכני AI.',
+        'מפתח Full Stack שמתחיל מהארכיטקטורה: ממפה קודם את זרימת הנתונים, ואז בונה בשכבות – צד לקוח, API ומסד נתונים – ומשלב AI במערכות באמצעות RAG, שרתי MCP וסוכנים. עובד עם React, TypeScript, Node.js, MySQL ו-MongoDB.',
 
     skills: [
         { label: 'Frontend', items: ['React', 'TypeScript', 'JavaScript', 'Redux', 'React Hook Form', 'Vite', 'HTML/CSS'] },
         { label: 'Backend', items: ['Node.js', 'Express', 'REST APIs', 'Zod', 'JWT', 'Firebase Auth'] },
         { label: 'מסדי נתונים', items: ['MySQL', 'MongoDB', 'Mongoose'] },
-        { label: 'AI וסוכנים', items: ['RAG', 'MCP servers', 'AI agents', 'OpenAI API', 'Prompt engineering'] },
+        { label: 'AI וסוכנים', items: ['RAG', 'MCP servers', 'AI agents', 'OpenAI API', 'n8n', 'Prompt engineering'] },
         { label: 'DevOps וכלים', items:['Docker', 'Git', 'GitHub', 'GitHub Pages', 'Firebase', 'ngrok', 'Postman'] },
     ],
 
@@ -51,8 +51,7 @@ export const he: PdfCopy = {
             id: 'simple-url-scraper',
             description: 'ספריית scraping לכתובות URL, שפורסמה כחבילת npm',
             bullets: [
-                'בניתי ממשק פשוט: מקבל URL ומחזיר את ה-metadata, ה-headers והקישורים שלו',
-                'תכננתי את הספרייה ככלי שסוכני AI יכולים להפעיל',
+                'בניתי ממשק פשוט שסוכני AI יכולים להפעיל: מקבל URL ומחזיר את ה-metadata, ה-headers והקישורים שלו',
             ],
         },
         {
@@ -69,6 +68,14 @@ export const he: PdfCopy = {
             bullets: [
                 'תכננתי אותו להפיק הצעה מוכנה לשליחה ללקוח, ולצידה רשימה פרטית של מה שהפרילנסר שכח לציין',
                 'בניתי אותו על בסיס הצעות מחיר אמיתיות שנאספו מפרילנסרים פעילים, והוא מתאים לכל שפה ולכל מקצוע',
+            ],
+        },
+        {
+            id: 'bax',
+            description: 'תוסף Chrome שקורא את הדף הפתוח ועונה על שאלות לגביו',
+            bullets: [
+                'בניתי scraper מבוסס Cheerio שמסנן סקריפטים, ניווט, פרסומות ובאנרי cookies, והופך את הדף לשורות ממוספרות',
+                'כתבתי בעצמי את לולאת הסוכן, בלי createAgent של LangChain, עם שני כלים: skim_page ו-read_lines',
             ],
         },
     ],
